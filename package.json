@@ -1,0 +1,30 @@
+{
+  "name": "mean-stack-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "*",
+    "es6-promise": "*",
+    "es6-shim": "*",
+    "express": "*",
+    "reflect-metadata": "*",
+    "rxjs": "*",
+    "systemjs": "*",
+    "zone.js": "*"
+  },
+  "devDependencies": {
+    "del": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-typescript": "*",
+    "run-sequence": "*"
+  }
+}
