@@ -2,13 +2,14 @@ import {Component, OnInit} from "angular2/core";
 
 @Component({
     selector: "about",
-    template: `<h1>About</h1>`
+    styleUrls: ["app/components/about/about.component.css"],
+    templateUrl: "app/components/about/about.component.html"
 })
 
 export class AboutComponent implements OnInit {
-
-    constructor() { }
+    constructor() {
+        console.log("About View Rendered!");
+    }
 
     ngOnInit() { }
-
 }

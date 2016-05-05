@@ -1,17 +1,24 @@
 <html>
 
 <head>
-  <title>M.E.A.N stack sample</title>
+  <title>M.E.A.N</title>
   <base href="/" />
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <!-- 1. Load libraries -->
-  <script src="libs/angular2/bundles/angular2-polyfills.js"></script>
+  <!-- #docregion libraries -->
+  <!-- #docregion ie-polyfills -->
   <script src="libs/es6-shim/es6-shim.js"></script>
+  <script src="libs/systemjs/dist/system-polyfills.js"></script>
+  <!-- #enddocregion ie-polyfills -->
+  <script src="libs/angular2/bundles/angular2-polyfills.js"></script>
   <script src="libs/systemjs/dist/system.src.js"></script>
   <script src="libs/rxjs/bundles/Rx.js"></script>
   <script src="libs/angular2/bundles/angular2.dev.js"></script>
   <script src="libs/angular2/bundles/router.dev.js"></script>
+  <!-- #enddocregion libraries -->
+
   <!-- 2. Configure SystemJS -->
+  <!-- #docregion systemjs -->
   <script>
     System.config({
         packages: {        
@@ -23,6 +30,7 @@
       });
       System.import("app/bootstrap").then(null, console.error.bind(console));
   </script>
+  <!-- #enddocregion systemjs -->
 </head>
 <!-- 3. Display the application -->
 
