@@ -1,0 +1,10 @@
+"use strict";
+var ImageModel = (function () {
+    function ImageModel() {
+        this.url = "http://";
+    }
+    return ImageModel;
+}());
+module.exports = ImageModel;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwaS9tb2RlbHMvSW1hZ2VNb2RlbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBRUE7SUFHSTtRQUNJLElBQUksQ0FBQyxHQUFHLEdBQUcsU0FBUyxDQUFDO0lBQ3pCLENBQUM7SUFDTCxpQkFBQztBQUFELENBTkEsQUFNQyxJQUFBO0FBRUQsaUJBQVMsVUFBVSxDQUFDIiwiZmlsZSI6ImFwaS9tb2RlbHMvSW1hZ2VNb2RlbC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBJSW1hZ2VNb2RlbCA9IHJlcXVpcmUoXCIuL2ludGVyZmFjZXMvSW1hZ2VNb2RlbFwiKTtcblxuY2xhc3MgSW1hZ2VNb2RlbCB7XG4gICAgdXJsOiBTdHJpbmc7XG5cbiAgICBjb25zdHJ1Y3RvcigpIHtcbiAgICAgICAgdGhpcy51cmwgPSBcImh0dHA6Ly9cIjtcbiAgICB9XG59XG5cbmV4cG9ydCA9IEltYWdlTW9kZWw7Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9

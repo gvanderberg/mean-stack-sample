@@ -1,9 +1,10 @@
-import { Component } from "angular2/core";
-import { Router, RouteConfig, RouterOutlet, RouterLink, ROUTER_DIRECTIVES } from "angular2/router"
+import {Component } from "angular2/core";
+import {Router, RouteConfig, RouterOutlet, RouterLink, ROUTER_DIRECTIVES} from "angular2/router"
+import {Routes, APP_ROUTES} from './../../routes';
 
-import { HomeComponent } from "./../home/home.component"
-import { AboutComponent } from "./../about/about.component"
-import { ContactComponent } from "./../contact/contact.component"
+import {HomeComponent} from "./../home/home.component"
+import {AboutComponent} from "./../about/about.component"
+import {ContactComponent} from "./../contact/contact.component"
 
 @RouteConfig([
     { path: "/", component: HomeComponent, as: "Home" },

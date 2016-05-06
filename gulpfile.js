@@ -15,7 +15,7 @@ gulp.task("build:server", function () {
     var tsProject = ts.createProject("server/tsconfig.json");
     var tsResult = gulp.src("server/**/*.ts").pipe(sourcemaps.init()).pipe(ts(tsProject))
 
-    return tsResult.js.pipe(concat("server.js")).pipe(sourcemaps.write()).pipe(gulp.dest("dist"))
+    return tsResult.js.pipe(sourcemaps.write()).pipe(gulp.dest("dist"))
 });
 
 // CLIENT

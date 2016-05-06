@@ -1,5 +1,5 @@
 {
-  "name": "mean-stack-sample",
+  "name": "mean-stack",
   "version": "1.0.0",
   "description": "",
   "main": "dist/server.js",
@@ -14,6 +14,7 @@
     "es6-promise": "*",
     "es6-shim": "*",
     "express": "*",
+    "jquery": "*",
     "reflect-metadata": "*",
     "rxjs": "*",
     "systemjs": "*",
