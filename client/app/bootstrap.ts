@@ -5,6 +5,4 @@ import {ROUTER_BINDINGS, ROUTER_PROVIDERS} from "angular2/router";
 import {Location, LocationStrategy, HashLocationStrategy} from "angular2/platform/common";
 import {AppComponent} from "./components/app/app.component";
 
-import {DataService} from "./core/services/dataService";
-
-bootstrap(AppComponent, [ROUTER_PROVIDERS, CORE_DIRECTIVES, provide(LocationStrategy, { useClass: HashLocationStrategy }), DataService]).catch(err => console.error(err));
+bootstrap(AppComponent, [ROUTER_PROVIDERS, CORE_DIRECTIVES, provide(LocationStrategy, { useClass: HashLocationStrategy })]).catch(err => console.error(err));

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">
+                Photo Gallery albums
+                <small>Page {{_page + 1}} of {{_pagesCount}}</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a [routerLink]="['/Home']">Home</a></li>
+                <li class="active">Albums</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row" *ngFor="#album of _albums">
+        <div class="col-md-1 text-center">
+            <p><i class="fa fa-camera fa-4x"></i></p>
+            <p></p>
+        </div>
+        <div class="col-md-5">
+            <a class="fancybox" rel="gallery" href="{{album.Thumbnail}}" title="{{album.Title}}">
+                <img class="media-object img-responsive album-thumbnail" src="{{album.Thumbnail}}" alt="" />
+            </a>
+        </div>
+        <div class="col-md-6">
+            <h3><a [routerLink]="[routes.albumPhotos.name, {id: album.Id}]">{{album.Title}}</a></h3>
+            <p>Photos: <span class="badge">{{album.TotalPhotos}}</span></p>
+            <p>{{album.Description}}</p>
+            <a *ngIf="album.TotalPhotos > 0" class="btn btn-primary" [routerLink]="[routes.albumPhotos.name, {id: album.Id}]">View photos <i class="fa fa-angle-right"></i></a>
+        </div>
+        <hr/>
+    </div>
+</div>
