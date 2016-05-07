@@ -48,7 +48,6 @@ class AlbumController implements IBaseController<AlbumBusiness> {
                     res.send(error);
                 } else {
                     res.json(result);
-                    //res.send({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -65,7 +64,6 @@ class AlbumController implements IBaseController<AlbumBusiness> {
                     res.send(error);
                 } else {
                     res.json(result);
-                    //res.render("users/list", { title: "Albums", data: result });
                 }
             });
         }
