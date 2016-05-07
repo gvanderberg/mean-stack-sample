@@ -3,6 +3,7 @@ import {CORE_DIRECTIVES, FORM_DIRECTIVES} from "angular2/common";
 import {RouterLink, RouteParams} from "angular2/router"
 import {Routes, APP_ROUTES} from "./../../routes";
 import {Paginated} from "./../../core/common/paginated";
+import {DataService} from "./../../core/services/dataService";
 
 @Component({
     selector: "album-photos",
@@ -12,22 +13,25 @@ import {Paginated} from "./../../core/common/paginated";
 })
 
 export class AlbumPhotosComponent extends Paginated implements OnInit {
-    private _albumsApi: string = "api/v1/albums";
-    private _photosApi: string = "api/v1/photos";
+    private _albumsApi: string = "api/v1/albums/";
+    private _photosApi: string = "api/v1/photos/";
     private _albumId: string;
     private _albumTitle: string;
     private _photos: Array<any>;
     private _routeParam: RouteParams;
 
-    constructor(public routeParam: RouteParams) {
+    constructor(public dataService: DataService, public routeParam: RouteParams) {
         super(0, 0, 0);
 
-        console.log("Album Photos View Rendered!");
+        dataService.set(this._albumsApi, 12);
+
         this._routeParam = routeParam;
         this._albumId = this._routeParam.get("id");
         this._albumsApi += this._albumId + "/photos/";
 
         this.getAlbumPhotos();
+
+        console.log("Album Photos View Rendered!");
     }
 
     convertDateTime(date: Date) {

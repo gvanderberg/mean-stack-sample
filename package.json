@@ -11,10 +11,12 @@
   "license": "MIT",
   "dependencies": {
     "angular2": "*",
+    "body-parser": "^1.15.1",
     "es6-promise": "*",
     "es6-shim": "*",
     "express": "*",
     "jquery": "*",
+    "morgan": "^1.7.0",
     "reflect-metadata": "*",
     "rxjs": "*",
     "systemjs": "*",

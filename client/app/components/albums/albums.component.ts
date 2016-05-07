@@ -13,24 +13,29 @@ import {DataService} from "./../../core/services/dataService";
 })
 
 export class AlbumsComponent extends Paginated implements OnInit {
-    private _albumsApi: string = "api/v1/albums";
+    private _albumsApi: string = "api/v1/albums/";
     private _albums: Array<any>;
     private routes = Routes;
 
-    constructor(public albumsService: DataService, public router: Router) {
+    constructor(public dataService: DataService) {
         super(0, 0, 0);
 
-        this.routes = Routes;
-
-        albumsService.set(this._albumsApi, 3);
+        dataService.set(this._albumsApi, 3);
 
         this.getAlbums();
+
+        console.log("Albums View Rendered!");
+    }
+
+    convertDateTime(date: Date) {
+        return date;
     }
 
     getAlbums(): void {
-        this.albumsService.get(this._page).subscribe(res => {
-            var data: any = res.json();
-            this._albums = data.Items;
+        this.dataService.get(this._page).subscribe(res => {
+            let data: any = res.json();
+
+            this._albums = data; //.Items;
             this._page = data.Page;
             this._pagesCount = data.TotalPages;
             this._totalCount = data.TotalCount;
@@ -39,12 +44,6 @@ export class AlbumsComponent extends Paginated implements OnInit {
 
             }
         });
-
-        this._albums = new Array();
-        this._albums.push({ "Id": 1, "Title": "Album 1", "Description": "XXX", "Thumbnail": "xxx" });
-        this._albums.push({ "Id": 2, "Title": "Album 2", "Description": "YYY", "Thumbnail": "yyy" });
-        this._albums.push({ "Id": 3, "Title": "Album 3", "Description": "XXX", "Thumbnail": "xxx" });
-        this._albums.push({ "Id": 4, "Title": "Album 4", "Description": "YYY", "Thumbnail": "yyy" });
     }
 
     ngOnInit() { }
