@@ -6,10 +6,10 @@ import RoleBusiness = require("./../business/RoleBusiness");
 class RoleController implements IBaseController<RoleBusiness> {
     create(req: express.Request, res: express.Response): void {
         try {
-            var user: IRoleModel = <IRoleModel>req.body;
-            var business = new RoleBusiness();
+            let data: IRoleModel = <IRoleModel>req.body;
+            let business = new RoleBusiness();
 
-            business.create(user, (error, result) => {
+            business.create(data, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
@@ -23,8 +23,8 @@ class RoleController implements IBaseController<RoleBusiness> {
     }
     delete(req: express.Request, res: express.Response): void {
         try {
-            var id: string = req.params._id;
-            var business = new RoleBusiness();
+            let id: string = req.params._id;
+            let business = new RoleBusiness();
 
             business.delete(id, (error, result) => {
                 if (error) {
@@ -40,15 +40,14 @@ class RoleController implements IBaseController<RoleBusiness> {
     }
     findById(req: express.Request, res: express.Response): void {
         try {
-            var id: string = req.params._id;
-            var business = new RoleBusiness();
+            let id: string = req.params._id;
+            let business = new RoleBusiness();
 
             business.findById(id, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
                     res.json(result);
-                    //res.send({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -58,14 +57,13 @@ class RoleController implements IBaseController<RoleBusiness> {
     }
     retrieve(req: express.Request, res: express.Response): void {
         try {
-            var business = new RoleBusiness();
+            let business = new RoleBusiness();
 
             business.retrieve((error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
                     res.json(result);
-                    //res.render("users/list", { title: "Roles", data: result });
                 }
             });
         }
@@ -76,11 +74,11 @@ class RoleController implements IBaseController<RoleBusiness> {
     }
     update(req: express.Request, res: express.Response): void {
         try {
-            var _id: string = req.params._id;
-            var user: IRoleModel = <IRoleModel>req.body;
-            var business = new RoleBusiness();
+            let id: string = req.params._id;
+            let data: IRoleModel = <IRoleModel>req.body;
+            let business = new RoleBusiness();
 
-            business.update(_id, user, (error, result) => {
+            business.update(id, data, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {

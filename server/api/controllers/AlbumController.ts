@@ -6,10 +6,10 @@ import AlbumBusiness = require("./../business/AlbumBusiness");
 class AlbumController implements IBaseController<AlbumBusiness> {
     create(req: express.Request, res: express.Response): void {
         try {
-            var user: IAlbumModel = <IAlbumModel>req.body;
-            var business = new AlbumBusiness();
+            let data: IAlbumModel = <IAlbumModel>req.body;
+            let business = new AlbumBusiness();
 
-            business.create(user, (error, result) => {
+            business.create(data, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
@@ -23,8 +23,8 @@ class AlbumController implements IBaseController<AlbumBusiness> {
     }
     delete(req: express.Request, res: express.Response): void {
         try {
-            var id: string = req.params._id;
-            var business = new AlbumBusiness();
+            let id: string = req.params._id;
+            let business = new AlbumBusiness();
 
             business.delete(id, (error, result) => {
                 if (error) {
@@ -40,8 +40,8 @@ class AlbumController implements IBaseController<AlbumBusiness> {
     }
     findById(req: express.Request, res: express.Response): void {
         try {
-            var id: string = req.params._id;
-            var business = new AlbumBusiness();
+            let id: string = req.params._id;
+            let business = new AlbumBusiness();
 
             business.findById(id, (error, result) => {
                 if (error) {
@@ -57,7 +57,7 @@ class AlbumController implements IBaseController<AlbumBusiness> {
     }
     retrieve(req: express.Request, res: express.Response): void {
         try {
-            var business = new AlbumBusiness();
+            let business = new AlbumBusiness();
 
             business.retrieve((error, result) => {
                 if (error) {
@@ -74,11 +74,11 @@ class AlbumController implements IBaseController<AlbumBusiness> {
     }
     update(req: express.Request, res: express.Response): void {
         try {
-            var _id: string = req.params._id;
-            var user: IAlbumModel = <IAlbumModel>req.body;
-            var business = new AlbumBusiness();
+            let id: string = req.params._id;
+            let data: IAlbumModel = <IAlbumModel>req.body;
+            let business = new AlbumBusiness();
 
-            business.update(_id, user, (error, result) => {
+            business.update(id, data, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {

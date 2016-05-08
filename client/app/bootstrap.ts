@@ -7,10 +7,11 @@ import {Location, LocationStrategy, HashLocationStrategy} from "angular2/platfor
 import "rxjs/add/operator/map";
 import {AppComponent} from "./components/app/app.component";
 import {DataService} from "./core/services/dataService";
+import {MembershipService} from "./core/services/membershipService";
 
-bootstrap(AppComponent, 
-            [HTTP_PROVIDERS, 
-            ROUTER_PROVIDERS, 
-            CORE_DIRECTIVES, 
-            provide(RequestOptions, { useClass: BaseRequestOptions }), 
-            provide(LocationStrategy, { useClass: HashLocationStrategy }), DataService]).catch(err => console.error(err));
+bootstrap(AppComponent,
+    [HTTP_PROVIDERS,
+        ROUTER_PROVIDERS,
+        CORE_DIRECTIVES,
+        provide(RequestOptions, { useClass: BaseRequestOptions }),
+        provide(LocationStrategy, { useClass: HashLocationStrategy }), DataService, MembershipService]).catch(err => console.error(err));

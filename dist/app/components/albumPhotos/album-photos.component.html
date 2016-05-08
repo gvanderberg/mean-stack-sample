@@ -15,14 +15,14 @@
     </div>
 
     <div class="row text-center">
-        <div class="col-md-3 col-sm-6 hero-feature" *ngFor="#image of _photos">
+        <div class="col-md-3 col-sm-6 hero-feature" *ngFor="let image of _photos">
             <div class="thumbnail blue-thumb">
-                <a class="fancybox center-block" rel="gallery" href="{{image.Uri}}" title="{{image.Title}}">
-                    <img class="media-object center-block" height="120" src="{{image.Uri}}" alt="" />
+                <a class="fancybox center-block" rel="gallery" href="{{image.uri}}" title="{{image.title}}">
+                    <img class="media-object center-block" height="120" src="{{image.uri}}" alt="" />
                 </a>
                 <div class="row caption img-caption">
                     <div class="row remove-caption">
-                        <div class="col-xs-10 dateCaption">{{convertDateTime(image.DateUploaded)}}</div>
+                        <div class="col-xs-10 dateCaption">{{convertDateTime(image.dateUploaded)}}</div>
                         <div class="col-xs-2 buttonCaption">
                             <button class="btn btn-xs btn-danger" (click)="delete(image)">
                                 <span class="fa-stack fa-1x">
@@ -31,7 +31,7 @@
                             </button>
                         </div>
                     </div>
-                    <strong>{{image.Title}}</strong>
+                    <strong>{{image.title}}</strong>
                 </div>
             </div>
         </div>

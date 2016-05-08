@@ -6,10 +6,10 @@ import PhotoBusiness = require("./../business/PhotoBusiness");
 class PhotoController implements IBaseController<PhotoBusiness> {
     create(req: express.Request, res: express.Response): void {
         try {
-            var user: IPhotoModel = <IPhotoModel>req.body;
-            var business = new PhotoBusiness();
+            let data: IPhotoModel = <IPhotoModel>req.body;
+            let business = new PhotoBusiness();
 
-            business.create(user, (error, result) => {
+            business.create(data, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
@@ -23,8 +23,8 @@ class PhotoController implements IBaseController<PhotoBusiness> {
     }
     delete(req: express.Request, res: express.Response): void {
         try {
-            var id: string = req.params._id;
-            var business = new PhotoBusiness();
+            let id: string = req.params._id;
+            let business = new PhotoBusiness();
 
             business.delete(id, (error, result) => {
                 if (error) {
@@ -40,15 +40,14 @@ class PhotoController implements IBaseController<PhotoBusiness> {
     }
     findById(req: express.Request, res: express.Response): void {
         try {
-            var id: string = req.params._id;
-            var business = new PhotoBusiness();
+            let id: string = req.params._id;
+            let business = new PhotoBusiness();
 
             business.findById(id, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
                     res.json(result);
-                    //res.send({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -58,14 +57,13 @@ class PhotoController implements IBaseController<PhotoBusiness> {
     }
     retrieve(req: express.Request, res: express.Response): void {
         try {
-            var business = new PhotoBusiness();
+            let business = new PhotoBusiness();
 
             business.retrieve((error, result) => {
                 if (error) {
                     res.send(error);
                 } else {
                     res.json(result);
-                    //res.render("users/list", { title: "Photos", data: result });
                 }
             });
         }
@@ -76,11 +74,11 @@ class PhotoController implements IBaseController<PhotoBusiness> {
     }
     update(req: express.Request, res: express.Response): void {
         try {
-            var _id: string = req.params._id;
-            var user: IPhotoModel = <IPhotoModel>req.body;
-            var business = new PhotoBusiness();
+            let id: string = req.params._id;
+            let data: IPhotoModel = <IPhotoModel>req.body;
+            let business = new PhotoBusiness();
 
-            business.update(_id, user, (error, result) => {
+            business.update(id, data, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {

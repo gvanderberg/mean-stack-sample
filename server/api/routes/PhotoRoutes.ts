@@ -14,6 +14,7 @@ class PhotoRoutes {
         let controller = this._photoController;
 
         router.get("/", controller.retrieve);
+        router.get("/:page/:pageSize", controller.retrieve);
         router.post("/", controller.create);
         router.get("/:_id", controller.findById);
         router.put("/:_id", controller.update);

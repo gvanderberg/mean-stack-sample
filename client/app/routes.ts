@@ -4,6 +4,7 @@ import {AlbumsComponent} from "./components/albums/albums.component";
 import {AlbumPhotosComponent} from "./components/albumPhotos/album-photos.component";;
 import {ContactComponent} from "./components/contact/contact.component";
 import {HomeComponent} from "./components/home/home.component";
+import {LoginComponent} from "./components/login/login.component";
 import {PhotosComponent} from "./components/photos/photos.component";
 
 export var Routes = {
@@ -12,6 +13,7 @@ export var Routes = {
     albums: new Route({ path: "/albums", name: "Albums", component: AlbumsComponent }),
     albumPhotos: new Route({ path: "/albums/:id/photos", name: "AlbumPhotos", component: AlbumPhotosComponent }),
     contact: new Route({ path: "/contact", name: "Contact", component: ContactComponent }),
+    login: new Route({ path: "/login", name: "Login", component: LoginComponent }),
     photos: new Route({ path: "/photos", name: "Photos", component: PhotosComponent })
 };
 

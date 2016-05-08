@@ -3,7 +3,7 @@ import express = require("express");
 
 class MethodOverride {
     static configuration(): any {
-        var app = express();
+        let app = express();
         
         //app.use(methodOverride("X-HTTP-Method"));
         //app.use(methodOverride("X-HTTP-Method-Override"));

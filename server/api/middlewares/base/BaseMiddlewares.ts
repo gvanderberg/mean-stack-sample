@@ -8,7 +8,7 @@ import MethodOverride = require("./../MethodOverride");
 
 class BaseMiddlewares {
     static get configuration() {
-        var app = express();
+        let app = express();
 
         app.use(logger("dev"));
         app.use(bodyParser.json());
