@@ -57,9 +57,11 @@ class AlbumController implements IBaseController<AlbumBusiness> {
     }
     retrieve(req: express.Request, res: express.Response): void {
         try {
+            let page: number = req.params.page;
+            let pageSize: number = req.params.pageSize;
             let business = new AlbumBusiness();
 
-            business.retrieve((error, result) => {
+            business.fetch(page, pageSize, (error, result) => {
                 if (error) {
                     res.send(error);
                 } else {

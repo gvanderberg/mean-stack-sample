@@ -3,7 +3,7 @@ import IReadRepository = require("./../common/ReadRepository");
 import IWriteRepository = require("./../common/WriteRepository");
 
 class BaseRepository<T extends mongoose.Document> implements IReadRepository<T>, IWriteRepository<T> {
-    private _model: mongoose.Model<mongoose.Document>;
+    protected _model: mongoose.Model<mongoose.Document>;
 
     constructor(schemaModel: mongoose.Model<mongoose.Document>) {
         this._model = schemaModel;

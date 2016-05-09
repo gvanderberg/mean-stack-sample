@@ -25,12 +25,15 @@ class AlbumBusiness implements IAlbumBusiness {
         this._albumRepository.retrieve(callback);
     }
 
+    fetch(page: number, pageSize: number, callback: (error: any, result: any) => void) {
+        this._albumRepository.fetch(page, pageSize, callback);
+    }
+
     update(_id: string, item: IAlbumModel, callback: (error: any, result: any) => void) {
         this._albumRepository.findById(_id, (err, res) => {
             if (err) {
                 callback(err, res);
-            }
-            else {
+            } else {
                 this._albumRepository.update(res._id, item, callback);
             }
         });

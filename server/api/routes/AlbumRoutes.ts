@@ -13,7 +13,6 @@ class AlbumRoutes {
     get routes() {
         let controller = this._albumController;
 
-        router.get("/", controller.retrieve);
         router.get("/:page/:pageSize", controller.retrieve);
         router.post("/", controller.create);
         router.get("/:_id", controller.findById);

@@ -35,16 +35,21 @@ export class AlbumsComponent extends Paginated implements OnInit {
         this.dataService.get(this._page).subscribe(res => {
             let data: any = res.json();
 
-            this._albums = data; //.Items;
-            this._page = data.Page;
-            this._pagesCount = data.TotalPages;
-            this._totalCount = data.TotalCount;
+            this._albums = data.items;
+            this._page = parseInt(data.page);
+            this._pagesCount = Math.ceil(data.totalPages);
+            this._totalCount = parseInt(data.totalCount);
         }, err => {
             if (err.status == 401) {
 
             }
         });
     }
+
+    search(i): void {
+        super.search(i);
+        this.getAlbums();
+    };
 
     ngOnInit() { }
 }
