@@ -1,5 +1,5 @@
 # mean-stack-sample
 
-https://github.com/chsakell/aspnet5-angular2-typescript/blob/master/src/PhotoGallery/wwwroot/app/app.html
+[ASP.NET Core, Angular 2 and Typescript](https://github.com/chsakell/aspnet5-angular2-typescript/)
 
 http://www.davidniciforovic.com/2016/02/03/building-a-single-page-todo-app-with-mean-including-angular-2/
