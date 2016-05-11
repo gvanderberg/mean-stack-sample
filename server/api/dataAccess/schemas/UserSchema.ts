@@ -10,7 +10,7 @@ class UserSchema {
             username: { type: String, required: true },
             email: { type: String, required: true },
             hashedPassword: { type: String, required: true },
-            salt: { type: String, required: true },
+            //salt: { type: String, required: true },
             isLocked: { type: Boolean, required: true },
             dateCreated: { type: Date, required: true }
         });

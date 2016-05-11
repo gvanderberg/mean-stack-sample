@@ -13,7 +13,7 @@ class AlbumController implements IBaseController<AlbumBusiness> {
                 if (error) {
                     res.send(error);
                 } else {
-                    res.json({ "success": "success" });
+                    res.json({ "success": true });
                 }
             });
         } catch (e) {
@@ -30,7 +30,7 @@ class AlbumController implements IBaseController<AlbumBusiness> {
                 if (error) {
                     res.send(error);
                 } else {
-                    res.json({ "success": "success" });
+                    res.json({ "success": true });
                 }
             });
         } catch (e) {
@@ -84,7 +84,7 @@ class AlbumController implements IBaseController<AlbumBusiness> {
                 if (error) {
                     res.send(error);
                 } else {
-                    res.json({ "success": "success" });
+                    res.json({ "success": true });
                 }
             });
         } catch (e) {
