@@ -34,10 +34,10 @@ export class MembershipService {
         }
     }
 
-    login(credentials: Object) {
+    login(credentials) {
         this.dataService.set(this._loginApi);
 
-        return this.dataService.post(credentials);
+        return this.dataService.post(JSON.stringify(credentials));
     }
 
     logout() {

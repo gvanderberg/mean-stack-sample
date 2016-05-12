@@ -22,6 +22,7 @@ export class DataService {
     }
 
     post(data?: any, mapJson: boolean = true) {
+        console.log(JSON.stringify(data));
         if (mapJson) {
             return this.http.post(this._baseUri, data).map(res => <any>(<Response>res).json());
         } else {
